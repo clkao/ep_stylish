@@ -1,9 +1,17 @@
 var collectContentPre;
-console.log('loading');
 collectContentPre = function(name, arg$){
-  var styl, cc, state;
-  styl = arg$.styl, cc = arg$.cc, state = arg$.state;
-  console.log('collecting', styl);
-  return cc.doAttrib(state, "style-" + styl);
+  var cls, styl, cc, state, i$, ref$, len$, c;
+  cls = arg$.cls, styl = arg$.styl, cc = arg$.cc, state = arg$.state;
+  if (cls) {
+    for (i$ = 0, len$ = (ref$ = cls.split(' ')).length; i$ < len$; ++i$) {
+      c = ref$[i$];
+      if (c.length) {
+        cc.doAttrib(state, "class-" + c);
+      }
+    }
+  }
+  if (styl) {
+    return cc.doAttrib(state, "style-" + styl);
+  }
 };
 exports.collectContentPre = collectContentPre;
