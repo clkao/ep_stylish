@@ -1,7 +1,7 @@
 {
   "parts": [
     {
-      "name": "main",
+      "name": "stylish",
       "client_hooks": {
         "collectContentPre": "ep_stylish/static/js/shared",
         "acePostWriteDomLineHTML": "ep_stylish/static/js/index",
